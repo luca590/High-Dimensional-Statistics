@@ -1,6 +1,6 @@
 # High-Dimensional-Statistics
 
-##Coming soon... will have R code and ppts explaining each topic
+## Coming soon... will have R code and ppts explaining each topic
 
 ### At the moment the code isn't clean and everything is a bit scattered. Will clean up by end of January
 
