@@ -104,11 +104,6 @@ IsingResults = IsingFit(favorable_opinion_matrix, plot = TRUE) #can see plot gen
 graph_to_plot = graph_from_adjacency_matrix(IsingResults$weiadj, mode = "undirected")
 plot.igraph(graph_to_plot)
 
-#---- Look at iGraph -----#
-#Some other network plotting libraries/APIs include 'networkD3' and 'network'
-# iGraph is by far the most extensive library for working with graphs
-# http://igraph.org/r/doc/
-
 #name the vertecies, V(graph) will return all the vertecies for graph
 V(graph_to_plot)$name <- candidates_favor
 
