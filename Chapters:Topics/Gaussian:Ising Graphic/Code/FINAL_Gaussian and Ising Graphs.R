@@ -1,6 +1,6 @@
 
 #-------------------------- Gaussian Model --------------------------------#
-setwd("/Users/BlackHawk/Desktop/TheBigD/")
+setwd("/Users/lucasgaylord/Desktop/TheBigD/")
 file = read.csv("Wages and Salaries by Industry (USA BEA).csv", header = FALSE, stringsAsFactors = FALSE)
 preserve_col_names = file[5:5,2:ncol(file)]
 file = file[6:nrow(file),2:ncol(file)]
@@ -53,7 +53,7 @@ View(name_dictionary)
 
 
 library(plyr)
-setwd("/Users/BlackHawk/Desktop/TheBigD/VOTER Survey/")
+setwd("/Users/lucasgaylord/Desktop/TheBigD/VOTER Survey/")
 
 survey_data = read.csv("VOTER_Survey_December16_Release1.csv")
 
@@ -80,6 +80,7 @@ states = survey_data["inputstate_2016"]
 
 favorable_opinion_matrix = apply(favorable_opinion_matrix,2,as.numeric)     #convert to numeric and transpose
 
+library(igraph)
 library(IsingFit) #Great Package!
 # Can see package here: https://cran.r-project.org/web/packages/IsingFit/IsingFit.pdf
 # Looking at the Reference list (pg 5), we see "Ravikumar, P., Wainwright, M. J., & Lafferty, J. D"
@@ -107,12 +108,6 @@ plot.igraph(graph_to_plot)
 #Some other network plotting libraries/APIs include 'networkD3' and 'network'
 # iGraph is by far the most extensive library for working with graphs
 # http://igraph.org/r/doc/
-
-library(igraph)
-# We will use iGraph to plot the graph created above
-# G is a matrix of the graph in graph_computation
-# We need to create a graph from the matrix, and can treat matrix like adjecency mat
-graph_to_plot = graph_from_adjacency_matrix(graph_computation$C01.LA$G, mode = "undirected")
 
 #name the vertecies, V(graph) will return all the vertecies for graph
 V(graph_to_plot)$name <- candidates_favor
